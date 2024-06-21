@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b82726b1c6.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu89uqN4ttGCzCSbybeDMP0afDRJHEPHc_API_KEY"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navber">
+            <div class="navber__logo">
+                <a href="#"><img src="img/logo.svg"></a>
+            </div>
+
+    <ul class="navber__menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">WORK</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+
+    <a href="#" class="navber__toogleBtn">
+        <i class="fas fa-bars"></i>
+    </a>
+    </nav>
+        
+    </header>
+
+
+    <div class="container">
+        <div class="bgplayer">
+            <video id="video" onClick="videoClick()" muted="muted" autoplay="autoplay" loop="loop">
+                <source src="img/bgvideo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        
+    </div>
+
+    <div class="break01"></div>
+
+    <div class="container2">
+        <div class="movetext">
+            <h4 id="line1"></h4>  <div class="break"></div>
+            <h2 id="line2"></h2>
+        </div>
+        <div class="con_v">
+            <img src="img/img1.jpg">
+        </div>
+
+    </div>
+
+    <div class="break01"></div>
+    
+ 
+    <div class="con3T"><h2>FEATURED WORKS</h2></div>
+    <div class="wrap">
+        <div class="container3">
+            <div class="bt0 bt1">BX Design</div>
+            <div class="bt0 bt2">UXUI Design</div>
+            <div class="bt0 bt3">Web Design/ Publishing</div>
+            <div class="bt0 bt4">Editorial Design</div>
+        </div>
+    </div>
+
+    <div class="break02"></div>
+
+    <div class="row">
+
+        <div class="con3T"> <h2>WORK</h2></div>
+        <div class="break03"></div>
+        <ul class="rowl">
+            <li><img src="img/HIP01.png" data-src="img/HIP02.png" class="pic" alt="Thumbnail 1"></li>
+            <li><img src="img/Vo01.png" data-src="img/Vo02.png" class="pic" alt="Thumbnail 2"></li>
+            <li><img src="img/Pa01.png" data-src="img/Pa02.png" class="pic" alt="Thumbnail 3"></li>
+            <li><img src="img/Woo01.png" data-src="img/Woo02.png" class="pic" alt="Thumbnail 4"></li>
+            <li><img src="img/Ha01.png" data-src="img/Ha02.png" class="pic" alt="Thumbnail 5"></li>
+            <li><img src="img/TS01.png" data-src="img/TS02.png" class="pic" alt="Thumbnail 6"></li>
+      </ul>
+    </div>
+    <div id="lightbox">
+        <img src="" alt="" id="lightboxImage">
+    </div>
+
+
+    <div class="break02"></div>
+
+    <div class="contact">
+        <div class="con3T"> <h2>CONTACT</h2></div>
+        <br>
+        <div class="contactC">
+            <div class="leftbox">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.871254008796!2d126.81897211096344!3d37.48736442854831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b628b7638ea39%3A0xec4502026425628d!2z7Jyg7ZWc64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1718924910042!5m2!1sko!2skr"
+                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+             <div class="rightbox">
+               
+                    <p>Call <br> 010-9003-2147</p>
+                    <p>E-mail<br> coka21@naver.com</p>
+                    <p>Address <br> 유한대학교 경기도 부천시 경인로 590 </p>
+                    <p>Instargram <br> me0chea</p>
+             </div>
+        </div>  
+
+    </div>
+
+    <footer>
+        <div class="foot"> <img src="img/logo.svg" alt=""> </div>
+        <div class="footxt_bot"> <p>Copyright Nayoungchae</p></div>
+    
+    </footer>
+
+
+
+    
+
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.querySelector(".navber__toogleBtn");
+            const menu = document.querySelector(".navber__menu");
+            const links = document.querySelector(".navber__links");
+
+            toggleBtn.addEventListener("click", function () {
+                menu.classList.toggle("active");
+                links.classList.toggle("active");
+            });
+        });
+        
+
+
+        function videoClick() {
+        var video = document.getElementById('video');
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+
+    function typeText(element, text, speed) {
+            let index = 0;
+            function type() {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.querySelector('.container2');
+            const line1 = document.getElementById("line1");
+            const line2 = document.getElementById("line2");
+
+            const text1 = "나를 나답게, 당신을 당신답게 만드는";
+            const text2 = "BE I 디자인 입니다";
+            const speed = 60; 
+
+            function checkScroll() {
+                if (isInViewport(container)) {
+                    window.removeEventListener('scroll', checkScroll);
+                    typeText(line1, text1, speed);
+                    setTimeout(function() {
+                        typeText(line2, text2, speed);
+                    }, text1.length * speed); 
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); 
+        });
+
+    
+        let clickImgs = document.querySelectorAll('.pic');
+        let lightbox = document.querySelector('#lightbox');
+        let lightboxImage = document.querySelector('#lightboxImage');
+
+        clickImgs.forEach(img => {
+            img.addEventListener('click', () => {
+                let imgData = img.getAttribute('data-src');
+                console.log('Thumbnail clicked:', imgData);
+                lightboxImage.setAttribute('src', imgData);
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+
+        function initMap() {
+      var darkModeStyle = [
+        { elementType: 'geometry', stylers: [{ color: '#212121' }] },
+        { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+        { elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+        { elementType: 'labels.text.stroke', stylers: [{ color: '#212121' }] },
+        { featureType: 'administrative', elementType: 'geometry', stylers: [{ color: '#757575' }] },
+        { featureType: 'administrative.country', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
+        { featureType: 'administrative.land_parcel', stylers: [{ visibility: 'off' }] },
+        { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#bdbdbd' }] },
+        { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+        { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#181818' }] },
+        { featureType: 'poi.park', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+        { featureType: 'poi.park', elementType: 'labels.text.stroke', stylers: [{ color: '#1b1b1b' }] },
+        { featureType: 'road', elementType: 'geometry.fill', stylers: [{ color: '#2c2c2c' }] },
+        { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#8a8a8a' }] },
+        { featureType: 'road.arterial', elementType: 'geometry', stylers: [{ color: '#373737' }] },
+        { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#3c3c3c' }] },
+        { featureType: 'road.highway.controlled_access', elementType: 'geometry', stylers: [{ color: '#4e4e4e' }] },
+        { featureType: 'road.local', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+        { featureType: 'transit', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+        { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#000000' }] },
+        { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#3d3d3d' }] }
+      ];
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 }, 
+        zoom: 8,  
+        styles: darkModeStyle 
+      });
+    }
+
+   
+    google.maps.event.addDomListener(window, 'load', initMap);
+  </script>
+
+   
+
+    </script>
+
+</body>
+</html>
